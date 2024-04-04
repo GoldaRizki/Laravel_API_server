@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlatController;
+use App\Http\Controllers\api\APIBarangController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +23,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/alat', [AlatController::class, 'index']);
 Route::get('/alat/{id}', [AlatController::class, 'show']);
+Route::post('/alat', [AlatController::class, 'store']);
+Route::put('/alat/update/{id}', [AlatController::class, 'update']);
+Route::delete('/alat/{id}', [AlatController::class, 'destroy']);
+
+Route::get('/barang', [APIBarangController::class, 'index']);
+Route::get('/barang/{id}', [APIBarangController::class, 'show']);
