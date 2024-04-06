@@ -28,4 +28,5 @@ Route::put('/alat/update/{id}', [AlatController::class, 'update']);
 Route::delete('/alat/{id}', [AlatController::class, 'destroy']);
 
 Route::get('/barang', [APIBarangController::class, 'index']);
+Route::get('/barang/koleksi', [APIBarangController::class, 'koleksi']);
 Route::get('/barang/{id}', [APIBarangController::class, 'show']);
