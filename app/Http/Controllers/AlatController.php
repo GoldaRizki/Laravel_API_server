@@ -15,7 +15,7 @@ class AlatController extends Controller
     }
 
     public function show($id){
-        $alat = Alat::find($id);
+        $alat = Alat::findOrFail($id);
         return response()->json($alat);
     }
 

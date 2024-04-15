@@ -7,6 +7,8 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class BarangResource extends JsonResource
 {
+
+
     /**
      * Transform the resource into an array.
      *
@@ -15,12 +17,10 @@ class BarangResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
-
-
+        //ddd($request->Nama);
         return [
-                'id' => $this->resource
-                
-
-        ];
+                'id' => $this->id,
+                'nama' => $this->nama
+        ]; 
     }
 }

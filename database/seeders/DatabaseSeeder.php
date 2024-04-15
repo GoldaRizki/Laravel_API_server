@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Alat;
+use App\Models\User;
 use App\Models\Barang;
 use Illuminate\Database\Seeder;
 
@@ -70,6 +71,12 @@ class DatabaseSeeder extends Seeder
             'nama' => 'Pigura SS',
             'jumlah' => 9,
             'harga_satuan' => 80000,
+        ]);
+
+
+        User::create([
+            'username' => 'yanto',
+            'password' => bcrypt('rahasisa')
         ]);
 
     }

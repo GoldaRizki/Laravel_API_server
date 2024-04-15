@@ -7,6 +7,8 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class BarangAnyarResource extends ResourceCollection
 {
+
+
     /**
      * Transform the resource collection into an array.
      *
@@ -15,9 +17,10 @@ class BarangAnyarResource extends ResourceCollection
     public function toArray(Request $request): array
     {
     
-        ddd($this);
+
         return [
-            'nama' => $request->nama,
+            'data' => $this->collection,
+            'meta' => ['nama' => 'data barang']
         ];
     }
 }

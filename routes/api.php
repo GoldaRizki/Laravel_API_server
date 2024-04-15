@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\AlatController;
-use App\Http\Controllers\api\APIBarangController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AlatController;
+use App\Http\Controllers\PenggunaController;
+use App\Http\Controllers\api\APIBarangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,13 @@ Route::post('/alat', [AlatController::class, 'store']);
 Route::put('/alat/update/{id}', [AlatController::class, 'update']);
 Route::delete('/alat/{id}', [AlatController::class, 'destroy']);
 
-Route::get('/barang', [APIBarangController::class, 'index']);
+Route::get('/barang', [APIBarangController::class, 'index'])->middleware('auth:sanctum');
 Route::get('/barang/koleksi', [APIBarangController::class, 'koleksi']);
 Route::get('/barang/{id}', [APIBarangController::class, 'show']);
+Route::post('/barang', [APIBarangController::class, 'create']);
+Route::put('/barang/{id}', [APIBarangController::class, 'update']);
+Route::delete('/barang/{id}', [APIBarangController::class, 'destroy']);
+
+
+Route::post('/login', [PenggunaController::class, 'login']);
+Route::post('/logout', [PenggunaController::class, 'logout'])->middleware('auth:sanctum');
